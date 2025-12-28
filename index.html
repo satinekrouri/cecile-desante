@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cécile Desante | Home Organizer Professionnelle</title>
+    <title>Cecil'organise | Home Organizer Professionnelle</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -218,6 +218,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            margin-bottom: 70px;
         }
         
         .service-card {
@@ -261,6 +262,99 @@
             margin-bottom: 20px;
         }
         
+        /* Tarifs Section */
+        .pricing-section {
+            background-color: var(--light-cream);
+            padding: 60px 0;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+        
+        .pricing-intro {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.3rem;
+            color: var(--yellow-brown);
+            font-weight: 500;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pricing-header {
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.5rem;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+        }
+        
+        .price {
+            font-size: 2.2rem;
+            color: var(--yellow-brown);
+            font-weight: 700;
+        }
+        
+        .price-duration {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: normal;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-top: 25px;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-light);
+        }
+        
+        .pricing-features li:before {
+            content: "✓";
+            color: var(--gold);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .free-consultation {
+            text-align: center;
+            margin-top: 40px;
+            padding: 25px;
+            background-color: rgba(212, 165, 116, 0.1);
+            border-radius: 10px;
+            border: 2px dashed var(--gold);
+        }
+        
+        .free-consultation h4 {
+            color: var(--yellow-brown);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
         /* About Section */
         .about {
             padding: 100px 0;
@@ -296,6 +390,37 @@
             margin-bottom: 25px;
             color: var(--text-light);
             font-size: 1.1rem;
+        }
+        
+        .about-features {
+            margin: 30px 0;
+        }
+        
+        .about-feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .about-feature-icon {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 3px;
+        }
+        
+        .who-for {
+            background-color: rgba(212, 165, 116, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .who-for h4 {
+            color: var(--yellow-brown);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
         }
         
         .about-image {
@@ -409,8 +534,7 @@
             margin-bottom: 20px;
         }
         
-        .footer-links h4,
-        .footer-social h4 {
+        .footer-links h4 {
             font-size: 1.3rem;
             margin-bottom: 25px;
             color: var(--gold);
@@ -432,30 +556,6 @@
         
         .footer-links ul li a:hover {
             color: var(--gold);
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--cream);
-            font-size: 1.3rem;
-            transition: all 0.3s;
-        }
-        
-        .social-icons a:hover {
-            background-color: var(--gold);
-            color: var(--dark-brown);
-            transform: translateY(-5px);
         }
         
         .copyright {
@@ -545,6 +645,10 @@
             .quote::after {
                 right: -20px;
             }
+            
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -552,7 +656,7 @@
     <!-- Header et Navigation -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Cécile <span>Desante</span></a>
+            <a href="#" class="logo">Cecil'<span>organise</span></a>
             
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
@@ -561,7 +665,7 @@
             <nav>
                 <ul id="navMenu">
                     <li><a href="#accueil">Accueil</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#services">Services & Tarifs</a></li>
                     <li><a href="#apropos">À Propos</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -614,20 +718,66 @@
                             <i class="fas fa-home"></i>
                         </div>
                         <h3>ORGANISATION D'INTÉRIEUR</h3>
-                        <p>Je réorganise votre intérieur, optimisant l'espace et simplifiant votre quotidien.</p>
+                        <p>Je réorganise votre intérieur, optimisant l'espace et simplifiant votre quotidien avec une disposition ergonomique et personnalisée.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tarifs Section -->
+            <div class="pricing-section">
+                <div class="section-title">
+                    <h2>MES TARIFS</h2>
+                </div>
+                
+                <p class="pricing-intro">Des formules adaptées à vos besoins et à votre budget</p>
+                
+                <div class="pricing-grid">
+                    <!-- Tarif 1 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Séance d'1 heure</h3>
+                            <div class="price">65€</div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Idéal pour commencer un tri en douceur</li>
+                            <li>Débloquer une situation précise</li>
+                            <li>Apprendre une méthode simple et efficace</li>
+                            <li>Se sentir soutenu et guidé</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tarif 2 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Forfait demi-journée</h3>
+                            <div class="price">260€ <span class="price-duration">(4 heures)</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Idéal pour une pièce complète</li>
+                            <li>Chambre, cuisine ou bureau</li>
+                            <li>Un premier grand pas vers le désencombrement</li>
+                            <li>Approfondissement du tri et organisation</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Tarif 3 -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3>Forfait journée</h3>
+                            <div class="price">450€ <span class="price-duration">(7 heures)</span></div>
+                        </div>
+                        <ul class="pricing-features">
+                            <li>Idéal pour un désencombrement plus global</li>
+                            <li>Un moment de transition</li>
+                            <li>Déménagement, séparation, nouveau départ</li>
+                            <li>Transformation complète d'un espace</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <!-- Service 3 -->
-                <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://www.agem.fr/uploads/images/slide/61bc598daa363748498833.jpg');"></div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <i class="fas fa-sort-amount-down"></i>
-                        </div>
-                        <h3>OPTIMISATION DES ESPACES</h3>
-                        <p>Je transforme vos placards, dressing et rangements en espaces fonctionnels et esthétiques où chaque objet a sa place.</p>
-                    </div>
+                <div class="free-consultation">
+                    <h4>📞 1er échange offert</h4>
+                    <p>Contactez-moi pour discuter de vos besoins et définir ensemble la formule qui vous convient le mieux.</p>
                 </div>
             </div>
         </div>
@@ -638,11 +788,47 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>À PROPOS DE CÉCILE</h2>
-                    <p>Passionnée par l'organisation et l'harmonie des espaces de vie, je suis devenue home organizer professionnelle pour aider les personnes à retrouver sérénité et bien-être dans leur intérieur.</p>
-                    <p>Avec une approche bienveillante et respectueuse, je vous guide dans la transformation de votre habitat en un lieu qui vous ressemble, où chaque objet a sa place et où vous vous sentez parfaitement à l'aise.</p>
-                    <p>Mon expérience et mes méthodes éprouvées me permettent de m'adapter à chaque personnalité et à chaque type d'espace, des appartements urbains aux maisons familiales.</p>
-                    <a href="#contact" class="cta-button">ME CONTACTER</a>
+                    <h2>Bienvenue chez Cecil'organise</h2>
+                    <p>Je m'appelle Cécile, fondatrice de Cecil'organise. Je suis sophrologue et hypnothérapeute depuis plus de 9 ans, et j'accompagne aujourd'hui les particuliers dans le tri, le rangement et le désencombrement, avec une approche profondément humaine.</p>
+                    
+                    <p>Depuis toujours, j'aime organiser, simplifier et désencombrer pour ne garder que l'essentiel. Parce que je suis convaincue qu'un espace encombré peut impacter notre bien-être, notre énergie et notre clarté mentale.</p>
+                    
+                    <p>Mon accompagnement ne se limite pas au rangement : j'aide mes clients à se libérer des objets qui pèsent visuellement ou émotionnellement, en respectant leur histoire, leur rythme et leurs besoins.</p>
+                    
+                    <h3 style="color: var(--yellow-brown); margin: 30px 0 20px;">Une approche douce et sur mesure</h3>
+                    
+                    <div class="about-features">
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">•</div>
+                            <div>Grâce à mon expérience en sophrologie et hypnose, je prends en compte les émotions liées aux objets</div>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">•</div>
+                            <div>Je comprends la difficulté à trier ou à se séparer, la culpabilité, l'attachement ou la fatigue mentale</div>
+                        </div>
+                        <div class="about-feature-item">
+                            <div class="about-feature-icon">•</div>
+                            <div>Chaque intervention est personnalisée, réalisée avec écoute, bienveillance et créativité</div>
+                        </div>
+                    </div>
+                    
+                    <p>Mes clients apprécient mon empathie, ma douceur et parlent souvent d'un véritable sentiment de soulagement après mon passage.</p>
+                    
+                    <div class="who-for">
+                        <h4>Pour qui ?</h4>
+                        <p>J'interviens auprès de personnes qui : se sentent dépassées par leur intérieur, traversent une période de changement (séparation, déménagement, nouveau départ) ou souhaitent vivre dans un espace plus clair, apaisant et aligné.</p>
+                    </div>
+                    
+                    <div style="margin-top: 30px;">
+                        <h4 style="color: var(--yellow-brown); margin-bottom: 15px;">Cecil'organise, c'est…</h4>
+                        <p><strong>✔</strong> Un accompagnement humain et sans jugement<br>
+                        <strong>✔</strong> Une méthode respectueuse et efficace<br>
+                        <strong>✔</strong> Un intérieur allégé pour un esprit plus serein</p>
+                        
+                        <p style="margin-top: 20px; font-weight: 500;">📞 Contactez-moi pour un premier échange et définissons ensemble l'accompagnement qui vous correspond.</p>
+                    </div>
+                    
+                    <a href="#contact" class="cta-button" style="margin-top: 30px;">ME CONTACTER</a>
                 </div>
                 
                 <div class="about-image">
@@ -652,96 +838,94 @@
         </div>
     </section>
 
-<!-- Contact Section -->
-<section class="contact" id="contact">
-    <div class="container">
-        <div class="section-title">
-            <h2>CONTACTEZ-MOI</h2>
-        </div>
-        
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Travaillons ensemble</h3>
-                <p>Prêt(e) à transformer votre intérieur en un espace harmonieux et fonctionnel ? Contactez-moi pour discuter de vos besoins.</p>
-                
-                <div class="contact-details">
-                    <div>
-                        <i class="fas fa-phone-alt"></i>
-                        <span>06 88 04 53 22</span>
-                    </div>
-                    <div>
-                        <i class="fas fa-envelope"></i>
-                        <span>cecile.krouri@hotmail.fr</span>
-                    </div>
-                    <div>
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Saint Denis de l'hôtel</span>
-                    </div>
-                </div>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>CONTACTEZ-MOI</h2>
             </div>
             
-            <div class="contact-form">
-                <!-- Partie simplifiée avec 2 boutons seulement -->
-                <div style="text-align: center; padding: 40px 20px;">
-                    <h3 style="color: var(--gold); margin-bottom: 30px; font-size: 1.5rem;">Contact rapide</h3>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Travaillons ensemble</h3>
+                    <p>Prêt(e) à transformer votre intérieur en un espace harmonieux et fonctionnel ? Contactez-moi pour discuter de vos besoins.</p>
                     
-                    <!-- Bouton Appel -->
-                    <a href="tel:+33688045322" 
-                       style="display: block; background-color: var(--gold); color: var(--dark-brown); 
-                              padding: 15px 30px; border-radius: 50px; text-decoration: none; 
-                              font-weight: bold; font-size: 1.1rem; margin-bottom: 20px;
-                              transition: all 0.3s;">
-                        <i class="fas fa-phone" style="margin-right: 10px;"></i>
-                        APPELER MAINTENANT
-                    </a>
-                    
-                    <!-- Bouton Email -->
-                    <a href="mailto:cecile.krouri@hotmail.fr?subject=Demande de contact - Organisation intérieur" 
-                       style="display: block; background-color: transparent; color: var(--gold); 
-                              padding: 15px 30px; border-radius: 50px; text-decoration: none; 
-                              font-weight: bold; font-size: 1.1rem; border: 2px solid var(--gold);
-                              transition: all 0.3s;">
-                        <i class="fas fa-envelope" style="margin-right: 10px;"></i>
-                        ENVOYER UN EMAIL
-                    </a>
+                    <div class="contact-details">
+                        <div>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>06 88 04 53 22</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <span>cecile.krouri@hotmail.fr</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Saint Denis de l'hôtel</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <div style="text-align: center; padding: 40px 20px;">
+                        <h3 style="color: var(--gold); margin-bottom: 30px; font-size: 1.5rem;">Contact rapide</h3>
+                        
+                        <!-- Bouton Appel -->
+                        <a href="tel:+33688045322" 
+                           style="display: block; background-color: var(--gold); color: var(--dark-brown); 
+                                  padding: 15px 30px; border-radius: 50px; text-decoration: none; 
+                                  font-weight: bold; font-size: 1.1rem; margin-bottom: 20px;
+                                  transition: all 0.3s;">
+                            <i class="fas fa-phone" style="margin-right: 10px;"></i>
+                            APPELER MAINTENANT
+                        </a>
+                        
+                        <!-- Bouton Email -->
+                        <a href="mailto:cecile.krouri@hotmail.fr?subject=Demande de contact - Cecil'organise" 
+                           style="display: block; background-color: transparent; color: var(--gold); 
+                                  padding: 15px 30px; border-radius: 50px; text-decoration: none; 
+                                  font-weight: bold; font-size: 1.1rem; border: 2px solid var(--gold);
+                                  transition: all 0.3s;">
+                            <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                            ENVOYER UN EMAIL
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <div class="footer-logo">Cécile Desante</div>
-                    <p>Home organizer professionnelle, je vous accompagne dans la création d'un intérieur harmonieux et fonctionnel qui vous ressemble.</p>
+                    <div class="footer-logo">Cecil'organise</div>
+                    <p>Home organizer professionnelle, je vous accompagne dans la création d'un intérieur harmonieux et fonctionnel qui vous ressemble, avec une approche bienveillante et humaine.</p>
                 </div>
                 
                 <div class="footer-links">
                     <h4>Liens rapides</h4>
                     <ul>
                         <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="#services">Services & Tarifs</a></li>
                         <li><a href="#apropos">À Propos</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-social">
-                    <h4>Suivez-moi</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+33688045322">06 88 04 53 22</a></li>
+                        <li><a href="mailto:cecile.krouri@hotmail.fr">cecile.krouri@hotmail.fr</a></li>
+                        <li>Saint Denis de l'hôtel</li>
+                    </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Cécile Desante - Home Organizer. Tous droits réservés.</p>
+                <p>&copy; 2025 Cecil'organise - Home Organizer. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -761,20 +945,6 @@
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
             });
-        });
-        
-        // Formulaire de contact
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Récupération des valeurs du formulaire
-            const name = this.querySelector('input[name="name"]').value;
-            const email = this.querySelector('input[name="email"]').value;
-            
-            // Simulation d'envoi
-            alert(`Merci ${name} ! Votre message a été envoyé. Je vous répondrai à l'adresse ${email} dans les plus brefs délais.`);
-            this.reset();
         });
         
         // Smooth scrolling pour les ancres
@@ -797,4 +967,3 @@
     </script>
 </body>
 </html>
-
